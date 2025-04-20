@@ -44,22 +44,32 @@ def main():
         st.write("""
         Welcome to the Usability Testing Tool for HCI.
 
+        This is a usability test of the Forex Quotes web application. Forex 
+        Quotes is a web application to find the exchange rates of various pairs 
+        of currency in real time. You are not being tested, but you are testing 
+        the application. This is an anonymous survey and you can stop the 
+        testing whenever you want. The purpose of this usability test is to 
+        gather information about the Forex Quotes web application when being used 
+        by a user to find ways to improve the application.
+
         In this app, you will:
         1. Provide consent for data collection.
         2. Fill out a short demographic questionnaire.
         3. Perform a specific task (or tasks).
         4. Answer an exit questionnaire about your experience.
         5. View a summary report (for demonstration purposes).
+        
+        If you have read the introduction, you can now proceed to the consent form.
         """)
 
     with consent:
         st.header("Consent Form")
 
-        st.write("Please read the consent form below and confirm your agreement to the study.")
+        st.write("Please read the consent form below and confirm your agreement to the study. Then, submit your consent form.")
         st.write("Consent agreement:")
         st.markdown(
             """
-            - I understand the purpose of this usability study
+            - I understand the purpose of this usability study.
             - I understand that I'm not being tested, but I am testing the 'product'.
             - I am aware that my data will be collected solely for research and improvement purposes.
             - I can withdraw from this study at any time.
@@ -107,21 +117,23 @@ def main():
 
     with tasks:
         st.header("Task Page")
-        st.write("Please select a task and record your experience completing it.")
+        st.write("You will be completing 5 simple tasks within the Forex Quotes Website. Please select a task and record your experience completing it. When you are done with all tasks, proceed to the Exit Questionnaire.")
 
         # For this template, we assume there's only one task, in project 3, we will have to include the actual tasks
-        selected_task = st.selectbox("Select Task", ["Task 1: Exchange Rate", "Task 2: Conversion", "Task 3: Chili", "Task 4: Requests"])
+        selected_task = st.selectbox("Select Task", ["Task 1: Exchange Rate", "Task 2: Conversion", "Task 3: Conversion 2", "Task 4: Chili", "Task 5: Requests"])
 
         if selected_task == "Task 1: Exchange Rate":
-            st.write("Task Description: Find the exchange rate for USD/TJS, and LTC/CNH.")
+            st.write("Task Description: Find the exchange rate for USD/TJS and LTC/CNH, and type them in the notes box.")
         elif selected_task == "Task 2: Conversion":
-            st.write("Task Description: Hide the labels for the input boxes of the website. Then, convert USD $121 to CAD.")
-        elif selected_task == "Task 3: Chili":
-            st.write("Task Description: Find the town named Chili.")
-        elif selected_task == "Task 4: Requests":
+            st.write("Task Description: Hide the labels for the input boxes of the website. Then, convert 121 USD to CAD.")
+        elif selected_task == "Task 3: Conversion 2":
+            st.write("Task Description: Show the labels for the input boxes of the website again. Then, convert 540 YER to THE.")
+        elif selected_task == "Task 4: Chili":
+            st.write("Task Description: Find the town named Chili")
+        elif selected_task == "Task 5: Requests":
             st.write("Task Description: Check the usage of the api requests made within the current day cycle.")
 
-
+        st.write("When you are ready to start the task, press start task timer. When you are done with the task, press stop task timer, and complete the task questions. Apart from the answers asked within each task, please enter note any observations you may have noticed. Then, submit your questions and continue.")
 
         # Track success, completion time, etc.
         start_button = st.button("Start Task Timer")
