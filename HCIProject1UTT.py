@@ -247,6 +247,11 @@ def main():
                 st.write(f"**Average Satisfaction**: {avg_satisfaction:.2f}")
                 st.write(f"**Average Difficulty**: {avg_difficulty:.2f}")
 
+            st.download_button("downloadconsent", CONSENT_CSV)
+            st.download_button("downloaddemo", DEMOGRAPHIC_CSV)
+            st.download_button("downloadtask", TASK_CSV)
+            st.download_button("downloadexit", EXIT_CSV)
+
 
 
 
